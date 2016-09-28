@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game of Life</title>
+	<script type="text/javascript" src="./js/GameOfLife.js"></script>
+	<style type="text/css">
+		
+		p {
+			display: inline;
+		}
+
+	</style>
+	<script>
+
+	var world, engine, render;
+
+	window.addEventListener('load', function() {
+
+		document.getElementById('create_button').addEventListener('click', createWorld);
+		document.getElementById('start_button').addEventListener('click', function() {
+			if (!engine) {
+				return;
+			}
+			if (engine.status === 1) {
+				Engine.stop(engine);
+				this.innerHTML = "start";
+			} else {
+				Engine.start(engine);
+				this.innerHTML = "pause";
+			}
+		});
+		document.getElementById('next_button').addEventListener('click', function() {
+			if (!engine) {
+				return;
+			}
+			Engine.tick(engine);
+			Render.render(render);
+		})
+		document.getElementById('randomize_button').addEventListener('click', function() {
+			World.randomize(world);
+			Render.render(render);
+		});
+		document.getElementById('clear_button').addEventListener('click', function() {
+			World.clear(world);
+			Engine.stop(engine);
+			Render.render(render);
+			document.getElementById('start_button').innerHTML = "start";
+		});
+		document.getElementById('range').addEventListener('mouseup', function() {
+			Engine.setInterval(engine, this.value);
+		});
+		document.getElementById('range').addEventListener('change', function() {
+			document.getElementById('range_label').innerHTML = '' + this.value + ' ms'
+		});
+		document.getElementById('range').addEventListener('input', function() {
+			document.getElementById('range_label').innerHTML = '' + this.value + ' ms'
+		});
+		document.getElementById('range').value = 100;
+	})
+
+	function createWorld() {
+		var width = parseInt(document.getElementById("width_input").value);
+		var height = parseInt(document.getElementById("height_input").value);
+		world = World.create(height, width);
+		engine = Engine.create(world);
+
+		/**
+		 * An example for customized evolving function,
+		 * implementing a cellular automaton called Day and Night
+		 * https://en.wikipedia.org/wiki/Day_and_Night_(cellular_automaton)
+		 */
+		/*
+		Engine.setEfunc(engine, function(status, sCount) {
+
+			if (status === 1 && (sCount === 3 || sCount === 4 || sCount === 6 || sCount === 7 || sCount === 8)) {
+				return 1;
+			}
+			if (sCount === 3 || sCount === 6 || sCount === 7 || sCount === 8) {
+				return 1;
+			} else {
+				return 0;
+			}
+
+		}) */
+
+		render = Render.create({
+			engine: engine,
+			strokeColor: "gray",  // change these two lines to
+			fillColor: "black",   // change the color of the game
+		});
+		var node = document.getElementById("game_of_life");
+		// clear previous canvas
+		while(node.hasChildNodes()) {
+			node.removeChild(node.lastChild);
+		}
+		node.appendChild(render.canvas);
+		Engine.setInterval(engine, document.getElementById("range").value);
+		Render.render(render);
+
+		document.getElementById('start_button').innerHTML = "start";
+	}
+
+	</script>
+
+</head>
+<body>
+	<h1>Game of Life</h1>
+	<div id="game_of_life"></div>
+
+	<input type="number" min=5 max=100 value=50 id="width_input">
+	<input type="number" min=5 max=100 value=50 id="height_input">
+	<button id="create_button">create</button>
+	<br>
+	<button id="start_button">start</button>
+	<button id="next_button">next</button>
+	<button id="randomize_button">randomize</button>
+	<button id="clear_button">clear</button>
+	<br>
+	<p>Refresh time: </p>
+	<input type="range" name="refresh_rate" min=10 max=500 defaultValue=100 id="range">
+	<p id='range_label'>100 ms</p>	
+
+</body>
+</html>
