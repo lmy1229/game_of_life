@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>report</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top-width: 2px; border-top-style: dashed; border-top-color: rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left-width: 4px; border-left-style: solid; border-left-color: rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top-width: 1px; border-top-style: solid; border-top-color: rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-style: solid; border-width: 1px; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors::shadow .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover::shadow .horizontal-scrollbar { visibility: visible; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+
+pre.editor-colors,
+.host {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line,
+.host .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible,
+.host .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor,
+.host .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region,
+.host .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region,
+.host .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,
+.host .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide,
+.host .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide,
+.host .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+.host .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region,
+.host .current-result .region.region.region {
+  border-radius: 0px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region,
+.host .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region,
+.host .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number,
+.host .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,
+.host .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,
+.host .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,
+.host .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,
+.host .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+.host .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+.host .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,
+.host .fold-marker:after {
+  color: #abb2bf;
+}
+.comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.comment .markup.link {
+  color: #5c6370;
+}
+.entity.name.type {
+  color: #e5c07b;
+}
+.entity.other.inherited-class {
+  color: #98c379;
+}
+.keyword {
+  color: #c678dd;
+}
+.keyword.control {
+  color: #c678dd;
+}
+.keyword.operator {
+  color: #abb2bf;
+}
+.keyword.other.special-method {
+  color: #61afef;
+}
+.keyword.other.unit {
+  color: #d19a66;
+}
+.storage {
+  color: #c678dd;
+}
+.storage.type.annotation,
+.storage.type.primitive {
+  color: #c678dd;
+}
+.storage.modifier.package,
+.storage.modifier.import {
+  color: #abb2bf;
+}
+.constant {
+  color: #d19a66;
+}
+.constant.variable {
+  color: #d19a66;
+}
+.constant.character.escape {
+  color: #56b6c2;
+}
+.constant.numeric {
+  color: #d19a66;
+}
+.constant.other.color {
+  color: #56b6c2;
+}
+.constant.other.symbol {
+  color: #56b6c2;
+}
+.variable {
+  color: #e06c75;
+}
+.variable.interpolation {
+  color: #be5046;
+}
+.variable.parameter {
+  color: #abb2bf;
+}
+.string {
+  color: #98c379;
+}
+.string.regexp {
+  color: #56b6c2;
+}
+.string.regexp .source.ruby.embedded {
+  color: #e5c07b;
+}
+.string.other.link {
+  color: #e06c75;
+}
+.punctuation.definition.comment {
+  color: #5c6370;
+}
+.punctuation.definition.method-parameters,
+.punctuation.definition.function-parameters,
+.punctuation.definition.parameters,
+.punctuation.definition.separator,
+.punctuation.definition.seperator,
+.punctuation.definition.array {
+  color: #abb2bf;
+}
+.punctuation.definition.heading,
+.punctuation.definition.identity {
+  color: #61afef;
+}
+.punctuation.definition.bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.punctuation.definition.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.punctuation.section.embedded {
+  color: #be5046;
+}
+.punctuation.section.method,
+.punctuation.section.class,
+.punctuation.section.inner-class {
+  color: #abb2bf;
+}
+.support.class {
+  color: #e5c07b;
+}
+.support.type {
+  color: #56b6c2;
+}
+.support.function {
+  color: #56b6c2;
+}
+.support.function.any-method {
+  color: #61afef;
+}
+.entity.name.function {
+  color: #61afef;
+}
+.entity.name.class,
+.entity.name.type.class {
+  color: #e5c07b;
+}
+.entity.name.section {
+  color: #61afef;
+}
+.entity.name.tag {
+  color: #e06c75;
+}
+.entity.other.attribute-name {
+  color: #d19a66;
+}
+.entity.other.attribute-name.id {
+  color: #61afef;
+}
+.meta.class {
+  color: #e5c07b;
+}
+.meta.class.body {
+  color: #abb2bf;
+}
+.meta.method-call,
+.meta.method {
+  color: #abb2bf;
+}
+.meta.definition.variable {
+  color: #e06c75;
+}
+.meta.link {
+  color: #d19a66;
+}
+.meta.require {
+  color: #61afef;
+}
+.meta.selector {
+  color: #c678dd;
+}
+.meta.separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.meta.tag {
+  color: #abb2bf;
+}
+.underline {
+  text-decoration: underline;
+}
+.none {
+  color: #abb2bf;
+}
+.invalid.deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.invalid.illegal {
+  color: #ffffff !important;
+  background-color: #e05252 !important;
+}
+.markup.bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.markup.changed {
+  color: #c678dd;
+}
+.markup.deleted {
+  color: #e06c75;
+}
+.markup.italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.markup.heading {
+  color: #e06c75;
+}
+.markup.heading .punctuation.definition.heading {
+  color: #61afef;
+}
+.markup.link {
+  color: #c678dd;
+}
+.markup.inserted {
+  color: #98c379;
+}
+.markup.quote {
+  color: #d19a66;
+}
+.markup.raw {
+  color: #98c379;
+}
+.source.cs .keyword.operator {
+  color: #c678dd;
+}
+.source.css .property-name,
+.source.css .property-value {
+  color: #828997;
+}
+.source.css .property-name.support,
+.source.css .property-value.support {
+  color: #abb2bf;
+}
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+}
+.source.gfm .link .entity {
+  color: #61afef;
+}
+.source.go .storage.type.string {
+  color: #c678dd;
+}
+.source.ini .keyword.other.definition.ini {
+  color: #e06c75;
+}
+.source.java .storage.modifier.import {
+  color: #e5c07b;
+}
+.source.java .storage.type {
+  color: #e5c07b;
+}
+.source.java .keyword.operator.instanceof {
+  color: #c678dd;
+}
+.source.java-properties .meta.key-pair {
+  color: #e06c75;
+}
+.source.java-properties .meta.key-pair > .punctuation {
+  color: #abb2bf;
+}
+.source.js .keyword.operator {
+  color: #56b6c2;
+}
+.source.js .keyword.operator.delete,
+.source.js .keyword.operator.in,
+.source.js .keyword.operator.of,
+.source.js .keyword.operator.instanceof,
+.source.js .keyword.operator.new,
+.source.js .keyword.operator.typeof,
+.source.js .keyword.operator.void {
+  color: #c678dd;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .string.quoted.json > .punctuation.string {
+  color: #e06c75;
+}
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json,
+.source.json .meta.structure.dictionary.json > .value.json > .string.quoted.json > .punctuation,
+.source.json .meta.structure.array.json > .value.json > .string.quoted.json > .punctuation {
+  color: #98c379;
+}
+.source.json .meta.structure.dictionary.json > .constant.language.json,
+.source.json .meta.structure.array.json > .constant.language.json {
+  color: #56b6c2;
+}
+.source.ruby .constant.other.symbol > .punctuation {
+  color: inherit;
+}
+.source.python .keyword.operator.logical.python {
+  color: #c678dd;
+}
+.source.python .variable.parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="technical-report">Technical Report</h1>
+<p>吕梦扬<br>
+2014013452<br>
+lmy1229@126.com</p>
+<hr>
+<h2 id="experiment-requirement">Experiment Requirement</h2>
+<ol>
+<li>Use JavaScript to implement the <em>Game of Life</em>. Good style of code, Scalability and module arrangement are required.</li>
+<li>Use <a href="http://mochajs.org">Mocha</a> to perform <strong>Unit Test</strong>.</li>
+<li>Technical report, including implementation details and scheme of unit test.</li>
+</ol>
+<hr>
+<h2 id="experiment-environment">Experiment Environment</h2>
+<ul>
+<li>OS : macOS Sierra 10.12</li>
+<li>Building Env: Sublime Text Build 3126</li>
+<li>Testing Env:<ul>
+<li>Safari 10.0 (12602.1.50.0.10)</li>
+<li>Chrome 53.0.2785.116 (64-bit)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="features">Features</h2>
+<ol>
+<li>Good coding style. The <code>GameOfLife.js</code> conforms to Google JavaScript Style.</li>
+<li>Highly modular and scalable library. Many customized settings.</li>
+<li>Can be used to implement all kinds of cellular automaton without changing the JavaScript file.</li>
+<li>Canvas are added to the page in dynamic. User can create a different game at any time he wants to.</li>
+<li>Adjustable refresh rate.</li>
+<li>Users can user mouse to create their own pattern. Except for clicking the block one by one, they can simply press the mouse button and drag over the canvas. All blocks on the way will be set.</li>
+</ol>
+<hr>
+<h2 id="implementation-details">Implementation Details</h2>
+<p>  The whole project consists of three parts: a library called <code>GameOfLife</code>, a view built on HTML and some control code in JavaScript. The library, located in <em>src/js/GameOfLife.js</em>, is the main part of the project. It has three components: the <code>World</code> object, which saves the data of the game, the <code>Engine</code> object, which controls the logic of the game, and the <code>Render</code> object, which is used to draw the world onto the canvas. These three parts will be introduced later in detail. The HTML part and the control part of the project are very simple and will not be introduced in detail.</p>
+<h4 id="gameoflife-library">GameOfLife library</h4>
+<ul>
+<li>The <code>GameOfLife</code> library is a highly modular library, which can be split into <code>World</code>, <code>Engine</code> and <code>Render</code>. The inspiration of this design comes from the library I used in the summer term called <a href="http://brm.io/matter-js/">Matter.js</a>.</li>
+<li>The idea is simple. Each object started with a capital letter(<code>World</code>, <code>Engine</code>, <code>Render</code>) has a function called <code>create</code>, which is used to create a object with letters in lowercase(<code>world</code>, <code>engine</code>, <code>render</code>). These lowercase objects do not have any functions, but store a set of personal settings that affect the behavior of those uppercase objects. For example, if a <code>render</code> object has <code>render.options.strokeColor = &quot;black&quot;</code>, the <code>Render</code> object will draw a black grid based on this setting.</li>
+<li>There are several advantages of this design<ol>
+<li>It is very convenient for users to use this library. Users can change the behavior of the program with simply changing the settings stored in lowercase objects, instead of change the code inside the library.</li>
+<li>Users can create several lowercase objects of the same type, providing them several customized settings. More than one games can be running simultaneously with different settings.</li>
+<li>It provides good scalability. With this design, the user can control every step of this game without knowing the logic behind the scene. They can even assign a new rule to determine whether or not a block of life is going to become alive or dead.</li>
+<li>It easy to run unit test on this library, for there are no global variables except for the <code>World</code>, <code>Engine</code> and <code>Render</code>, and these objects contains no information for a unit test to run on. Every test has to be run on local variables like <code>world</code>, <code>engine</code> and <code>render</code>.</li>
+</ol>
+</li>
+<li>Now I will cover the three part of the library respectively.</li>
+</ul>
+<h6 id="-world-object"><code>World</code> Object</h6>
+<ul>
+<li>Basic information<ul>
+<li>The <code>World</code> object and <code>world</code> objects only controls the data of the game, including how big the world is and status of each block. It provides no logic function more than calculating number of the surrounding living blocks.</li>
+<li>The structure of a <code>world</code> object is two 2D arrays combined with some other informations. The two 2D arrays are <code>world.map</code>, which saves the status of each block, and <code>world.backmap</code>, which is used in the <code>engine</code> to update the status.</li>
+</ul>
+</li>
+<li><code>World</code> functions<ul>
+<li><strong>World.create(height, width)</strong> Creates a new <code>world</code> with given parameters. All blocks of the new world is set to 0 (dead). It uses a nested for-loop to create a 2D world with value 0.</li>
+<li><strong>World.randomize(world)</strong> Randomizes the status of each block inside the <code>world</code> provided. The probability of a block being set to 1 (alive) is about 20%.</li>
+<li><strong>World.clear(world)</strong> Clear the <code>world</code> provided and set status of all blocks to 0 (dead).</li>
+<li><strong>World.setBlock(World, i, j, status)</strong> Sets the status of block <code>(i, j)</code> in the <code>world</code> to <code>status</code>. When <code>status</code> is not provided, it flips the status(1-&gt;0, 0-&gt;1).</li>
+<li><strong>World.sCount(world, x, y)</strong> Calculates the number of living blocks surrounding the block <code>(x, y)</code>. When the block is on the border of the map, blocks on the other side of the map will be counted. The calculation is achieved with a nested for-loop that will only run 9 times, as is shown below. Notice that the equation <code>(x + i + m) % m</code> can do the trick to count the blocks on the other side of the map.<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>var&nbsp;count&nbsp;=&nbsp;0;</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>for&nbsp;(var&nbsp;i&nbsp;=&nbsp;-1;&nbsp;i&nbsp;&lt;&nbsp;2;&nbsp;i++)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>for&nbsp;(var&nbsp;j&nbsp;=&nbsp;-1;&nbsp;j&nbsp;&lt;&nbsp;2;&nbsp;j++)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>if&nbsp;(i&nbsp;!==&nbsp;0&nbsp;||&nbsp;j&nbsp;!==&nbsp;0)&nbsp;{</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>count&nbsp;+=&nbsp;world.map[(x&nbsp;+&nbsp;i&nbsp;+&nbsp;m)&nbsp;%&nbsp;m][(y&nbsp;+&nbsp;j&nbsp;+&nbsp;n)&nbsp;%&nbsp;n];</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;&nbsp;</span><span class="meta paragraph text"><span>}</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>}</span></span></span></div></pre></li>
+</ul>
+</li>
+<li><code>world</code> properties<ul>
+<li><strong>world.map</strong> stores the status informations of the whole world in a 2D array. A value of <code>1</code> means the corresponding block is alive, while a value of <code>0</code> means dead.</li>
+<li><strong>world.backmap</strong> is a auxiliary 2D array that is used by <code>engine</code> object in the <code>Engine.tick</code> function. It is used to save the time of allocating memory each time the <code>tick</code> function is called.</li>
+<li><strong>world.height</strong> height of the world.</li>
+<li><strong>world.width</strong> width of the world.</li>
+<li><strong>world.round</strong> indicates how many rounds has this world been through. Started at 0, and add 1 each time <code>tick</code> is called.</li>
+</ul>
+</li>
+</ul>
+<h6 id="-engine-object"><code>Engine</code> Object</h6>
+<ul>
+<li>Basic information<ul>
+<li><code>Engine</code> object is the logic part of the Game of Life, including proceeding the corresponding world with one round, and starting/stopping a timer according the time interval.</li>
+<li>One thing to mention is that <code>engine</code> objects allow personal customized <code>evolve</code> function(controlling whether a block should be dead or alive in the next turn). This makes possible for users to implement different kinds of Cellular Automaton without changing the code inside the library.</li>
+</ul>
+</li>
+<li><code>Engine</code> functions<ul>
+<li><strong>Engine.create(world)</strong> Creates a <code>engine</code> object with <code>engine.world</code> set to <code>world</code> parameter. All other options are set to default.</li>
+<li><strong>Engine.setEfunc(engine, efunc)</strong> Sets the <code>engine.evolve</code> to <code>efunc</code>. For more detail about evolving function, see <code>engine.evolve</code> below.</li>
+<li><strong>Engine.setInterval(engine, interval)</strong> Sets the time interval of the <code>engine</code> to call <code>Engine.tick</code>. If the engine is currently running, the previous timer is immediately cleared and a new timer is set to ensure the engine is still running.</li>
+<li><strong>Engine.tick(engine)</strong> Proceeds the <code>engine.world</code> with one round. Because statuses of all blocks should be updated simultaneously, two nested for-loop is used to complete the task. First, it invoke <code>engine.evolve</code> on every block of the map to calculate the next status and save the result to <code>world.backmap</code>. Then, it copies the <code>world.backmap</code> to <code>world.map</code>.</li>
+<li><strong>Engine.start(engine)</strong> Starts the given <code>engine</code>, so that <code>Engine.tick(engine)</code> is called periodically. It uses <code>document.setInterval</code> to do the task. The timer handler returned by the <code>setInterval</code> is stored in <code>engine.intervalHandle</code> so that it can be used to stop the timer in <code>Engine.stop</code></li>
+<li><strong>Engine.stop(engine)</strong> Stops the given <code>engine</code> by the <code>intervalHandle</code> property.</li>
+</ul>
+</li>
+<li><code>engine</code> properties<ul>
+<li><strong>engine.world</strong> is the <code>world</code> object the engine is bound to. <code>engine</code> will manipulate the data in this world only.</li>
+<li><strong>engine.interval</strong> is the interval of each time the <code>tick</code> function is called.</li>
+<li><strong>engine.intervalHandle</strong> is used to stop the timer.</li>
+<li><strong>engine.status</strong> is the status of this engine, 0 for stopped and 1 for running.</li>
+<li><strong>engine.render</strong> is the render to which this engine is bound. It is set to undefined until a <code>render</code> is created from this engine.</li>
+<li><strong>engine.startSetting</strong> is used to handle mouse event.</li>
+<li><strong>engine.lastBlock</strong> is also used to handle mouse event.</li>
+<li><strong>engine.evolve</strong> is a function to determine whether a block is going to die or live in the next turn. Users can specify customized rules in the form of <em>function(status, sCount) -&gt; status_next_turn</em>. An example of customized evolving function is provided in <code>src/html/index.html</code></li>
+</ul>
+</li>
+</ul>
+<h6 id="-render-object"><code>Render</code> Object</h6>
+<ul>
+<li>Basic information<ul>
+<li><code>Render</code> object is used to draw the game on the web page. Currently it uses <em>HTML5 canvas</em>.</li>
+<li><code>render</code> object is created by <code>Render</code> and is bound to one and only one <code>engine</code> object. It stores every setting that <code>Render</code> would need to do the drawing.</li>
+</ul>
+</li>
+<li><code>Render</code> functions<ul>
+<li><strong>Render.create(opts)</strong> Creates a new <code>render</code> object from the <code>opts</code> given. The <code>opts</code> parameter has to be a object containing the options the user want to customize. Otherwise, the <code>render</code> settings will be set to default. For all options users can specify, please see the <code>render.options</code> part below.</li>
+<li><strong>Render.render(render)</strong> draw the world onto the canvas using the options in the <code>render</code>. This function should be called each time the canvas needs to be updated.</li>
+</ul>
+</li>
+<li><code>render</code> properties<ul>
+<li><strong>render.engine</strong> is the <code>engine</code> bound to the render. The render will draw the data in this engine onto the canvas. Can be specified in <code>Render.create(opts)</code> by setting <code>opts.engine</code>.</li>
+<li><strong>render.canvas</strong> is a <em>HTML5 canvas</em> element. The render will draw the game onto this canvas. Can be specified in <code>Render.create(opts)</code> by setting <code>opts.canvas</code>. Not passing this argument will cause the function to create a new canvas by calling <code>_createCanvas(width, height)</code> function, which is a private function that is not exposed to users. Users have to insert the created canvas into the HTML DOM.</li>
+<li><strong>render.context</strong> is the context gained by calling <code>render.canvas.getContext(&#39;2D&#39;)</code></li>
+<li><strong>render.options</strong> is all options <code>Render</code> need to draw the game. Including:<ul>
+<li><strong>strokeColor</strong> color of the grid lines.</li>
+<li><strong>fillColor</strong> color of blocks that will be filled.</li>
+<li><strong>blockSize</strong> size(height and width) of each block, in pixel.</li>
+<li><strong>startPointX</strong> X coordinate of the left-top of the grid.</li>
+<li><strong>startPointY</strong> Y coordinate of the left-top of the grid.</li>
+<li><strong>width</strong> width of the canvas.</li>
+<li><strong>height</strong> height of the canvas.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="others-mouse-event-handling-">Others (mouse event handling)</h6>
+<ul>
+<li>The mouse event is implemented by adding event listeners to the canvas element. Since I can&#39;t tell which one should handle it, the render or the engine, I made it private inside the library(<code>_mousedown</code>, <code>_mousemove</code> and <code>_mouseup</code> function) so that the users don&#39;t know anything about it.</li>
+<li>When the mouse button is pressed, the <code>_mousedown</code> function is triggered, setting the <code>engine.startSetting</code> to <code>true</code>, and <code>engine.lastBlock</code> to the coordinate of the pressed block.</li>
+<li>Then, when the mouse moves with button pressed, the <code>_mousemove</code> functions is triggered. It firstly checks if <code>engine.startSetting</code> is set. Then, it checks if <code>engine.lastBlock</code> is equal to the block currently mouse is in. finally, it changes the status of current block and set <code>engine.lastBlock</code> to this block.</li>
+<li>When the mouse button releases, the <code>_mouseup</code> function is triggered, which set <code>engine.startSetting</code> back to false, indicating the end of the whole mouse event cycle.</li>
+</ul>
+<h2 id="unit-test-report">Unit Test Report</h2>
+<h4 id="test-environment">Test environment</h4>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>eslint&nbsp;v3.5.0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>mocha&nbsp;v3.1.0</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>chai&nbsp;v3.5.0</span></span></span></div></pre><h4 id="test-detail">Test Detail</h4>
+<ul>
+<li>Most of the tests are to test if a variable is an object or a function, which is very trivial. Some of other tests are UI-based test, which can only be tested manually by looking at the web page. However, there are two tests that I want to introduce in detail.</li>
+<li>The first one is the test of <code>World.sCount</code> function, which is the very foundation of this project. There are three things that needs to be tested: calculating the sCount in the middle/on the edge/in the corner of the map. Therefore, I designed a 3 * 3 map which is initialized as below:<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[[1,&nbsp;1,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>[1,&nbsp;1,&nbsp;1],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;1,&nbsp;0]]</span></span></span></div></pre>I called <code>World.sCount(world, 1, 1)</code>, <code>World.sCount(world, 1, 0)</code> and <code>World.sCount(world, 0, 0)</code> and got a result of 5, 5, 5 respectively, which is exactly what I&#39;m expecting. This result indicates the correctness of <code>World.sCount</code> function.</li>
+<li>The second test is to examine the <code>tick</code> function. For this, I used a pattern called the <em>glider</em>. It returns to it origin shape after 4 cycles, but only moves one block left and one block down. The origin pattern is provided as below:<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>[0,&nbsp;0,&nbsp;1,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;1,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;1,&nbsp;1,&nbsp;1,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0]]</span></span></span></div></pre>After 1 round, it should be:<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;1,&nbsp;0,&nbsp;1,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;1,&nbsp;1,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;0,&nbsp;1,&nbsp;0,&nbsp;0]]</span></span></span></div></pre>And after 4 rounds, it should be:<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>[[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span>&nbsp;</span><span class="meta paragraph text"><span>[0,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[0,&nbsp;1,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[1,&nbsp;0,&nbsp;0,&nbsp;0,&nbsp;0],</span></span></span></div><div class="line"><span class="text plain"><span class="meta paragraph text"><span>&nbsp;[1,&nbsp;1,&nbsp;1,&nbsp;0,&nbsp;0]]</span></span></span></div></pre>I called <code>Engine.tick(engine)</code> for 1 time and for 4 times, and the result is equal to the expected one. So it can be guaranteed that the <code>tick</code> function is right.</li>
+</ul>
+<h2 id="deploy">Deploy</h2>
+<p>  The project is stored <a href="https://github.com/lmy1229/game_of_life">here</a>. And a runnable page is on my <a href="https://lmy1229.github.io/game_of_life/">Github-page</a></p></body>
+</html>
