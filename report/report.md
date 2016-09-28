@@ -13,6 +13,16 @@ lmy1229@126.com
 
 ------------------------------------------
 
+## Experiment Environment
+
+* OS : macOS Sierra 10.12
+* Building Env: Sublime Text Build 3126
+* Testing Env:
+  * Safari 10.0 (12602.1.50.0.10)
+  * Chrome 53.0.2785.116 (64-bit)
+
+------------------------------------------
+
 ## Features
 
 1. Good coding style. The `GameOfLife.js` conforms to Google JavaScript Style.
@@ -122,6 +132,8 @@ lmy1229@126.com
 #### Test environment
 ```
 eslint v3.5.0
+mocha v3.1.0
+chai v3.5.0
 ```
 
 #### Test Detail
@@ -133,4 +145,31 @@ eslint v3.5.0
      [0, 1, 0]]
     ```
   I called `World.sCount(world, 1, 1)`, `World.sCount(world, 1, 0)` and `World.sCount(world, 0, 0)` and got a result of 5, 5, 5 respectively, which is exactly what I'm expecting. This result indicates the correctness of `World.sCount` function.
-  * The second test is to examine the 
+  * The second test is to examine the `tick` function. For this, I used a pattern called the *glider*. It returns to it origin shape after 4 cycles, but only moves one block left and one block down. The origin pattern is provided as below:
+    ```
+    [[0, 0, 0, 0, 0],
+     [0, 0, 1, 0, 0],
+     [0, 1, 0, 0, 0],
+     [0, 1, 1, 1, 0],
+     [0, 0, 0, 0, 0]]
+    ```
+  After 1 round, it should be:
+    ```
+    [[0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0],
+     [0, 1, 0, 1, 0],
+     [0, 1, 1, 0, 0],
+     [0, 0, 1, 0, 0]]
+    ```
+  And after 4 rounds, it should be:
+    ```
+    [[0, 0, 0, 0, 0],
+     [0, 0, 0, 0, 0],
+     [0, 1, 0, 0, 0],
+     [1, 0, 0, 0, 0],
+     [1, 1, 1, 0, 0]]
+    ```
+  I called `Engine.tick(engine)` for 1 time and for 4 times, and the result is equal to the expected one. So it can be guaranteed that the `tick` function is right.
+
+## Deploy
+  The project is stored <a href="https://github.com/lmy1229/game_of_life">here</a>. And a runnable page is on my <a href="https://lmy1229.github.io/game_of_life/">Github-page</a>
